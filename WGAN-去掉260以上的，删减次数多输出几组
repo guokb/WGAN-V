@@ -241,14 +241,12 @@ for epoch in range(num_epoch):
             if (case[j,4]<0):
                 case[j,4]=0
             
-            '''
-            if (case[j,1]>=260):
-                case[j,1]=228
-            if (case[j,3]>=260):
-                case[j,3]=228
-            if (case[j,5]>=260):
-                case[j,5]=228
-            '''
+            if (case[j,1]>=255):
+                case[j,1]=random.randrange(224,230)  # 落在这个区间里
+            if (case[j,3]>=255):
+                case[j,3]=random.randrange(224,230)
+            if (case[j,5]>=255):
+                case[j,5]=random.randrange(224,230)
             
         case = pd.DataFrame(case)
         case_cun.append(case)
